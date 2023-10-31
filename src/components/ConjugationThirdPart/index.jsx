@@ -1,40 +1,40 @@
 import { Container, Head, Item } from "./styled";
 import { useAuth } from "../../hooks/useAuth";
 
-const Conjugation = () => {
+const ConjugationThirdPart = () => {
     
-    const { first } = useAuth()
+    const { third } = useAuth()
     
     
     return (
         <>
         
-            {first.map((f) => {
+            {third.map((t) => {
                 return (
                     <Container>
                         <table>
                             <thead>
-                                <Head>{f.tense}</Head>
+                                <Head>{t.tense}</Head>
                             </thead>
                             
                             <tbody>
                                 <tr>
-                                    <Item>{f.first}</Item>
+                                    <Item>{t.first}</Item>
                                 </tr>
                                 <tr>
-                                    <Item>{f.second}</Item>
+                                    <Item>{t.second}</Item>
                                 </tr>
                                 <tr>
-                                    <Item>{f.third}</Item>
+                                    <Item>{t.third}</Item>
                                 </tr>
                                 <tr>
-                                    <Item>{f.fourth}</Item>
+                                    <Item>{t.fourth}</Item>
                                 </tr>
                                 <tr>
-                                    <Item>{f.fifth}</Item>
+                                    <Item>{t.fifth}</Item>
                                 </tr>
                                 <tr>
-                                    <Item>{f.sixth}</Item>
+                                    <Item>{t.sixth}</Item>
                                 </tr>
                             </tbody>
                         </table>
@@ -46,4 +46,4 @@ const Conjugation = () => {
     )
 }
 
-export default Conjugation;
+export default ConjugationThirdPart;

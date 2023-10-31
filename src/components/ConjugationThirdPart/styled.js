@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
-    margin-top: 8px;
+margin-top: 8px;
     width: 150px;
     padding: 10px;
-    align-items: start;
 `
 
 export const Head = styled.h3`
