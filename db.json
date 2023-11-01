@@ -233,6 +233,32 @@
             "fourth": "are",
             "fifth": "are",
             "sixth": "are"
+        },
+        {
+            "id": 19,
+            "name": "Espanhol",
+            "verbName": "estar",
+            "mode": "indicativo",
+            "tense": "presente",
+            "first": "estoy",
+            "second": "estás",
+            "third": "está",
+            "fourth": "estamos",
+            "fifth": "estáis",
+            "sixth": "estan"
+        },
+        {
+            "id": 20,
+            "name": "Espanhol",
+            "verbName": "estar",
+            "mode": "indicativo",
+            "tense": "preterito perfecto",
+            "first": "he estado",
+            "second": "has estado",
+            "third": "ha estado",
+            "fourth": "hemos estado",
+            "fifth": "habéis estado",
+            "sixth": "han estado"
         }
     ]
 }

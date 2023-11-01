@@ -11,10 +11,13 @@ export const AuthContextProvider = ({children}) => {
     let first = []
     let second = []
     let third = []
-    let language = "Espanhol"
-    let nameVerb = "ser"
-    let firstMode = 'indicativo'
+    const [ language, setLanguage ] = useState("")
+    const [ nameVerb, setNameVerb ] = useState("")
+    let firstMode = ''
+    let secondMode = ''
     let languages = []
+    let firstCount = 0
+    let secondCount = 0
 
     useEffect(() => {
         handleGetVerb();
@@ -33,10 +36,8 @@ export const AuthContextProvider = ({children}) => {
     const getLanguages = () => {
         languages.push(verb[0].name)
         for (let item in verb) {
-            for (let l in languages) {
-                if (verb[item].name !== languages[l]) {
-                    languages.push(verb[item].name)
-                }
+            if (!languages.includes(verb[item].name)) {
+                languages.push(verb[item].name)
             }
         }
     }
@@ -47,23 +48,42 @@ export const AuthContextProvider = ({children}) => {
             if (firstMode === '') {
                 firstMode = verb[item].mode
             }
+            if (firstMode === verb[item].mode) {
+                firstCount = firstCount + 1
+            }
+            if (firstMode !== verb[item].mode) {
+                secondMode = verb[item].mode
+                secondCount = secondCount + 1
+            }
         }
+
     }
+
+    if (secondCount > firstCount) {
+        let temp = firstMode
+        firstMode = secondMode
+        secondMode = temp
+    }    
 
     for (let i = 0; i < current.length; i++){
         if (current[i] !== undefined) {
-            if (i < 6 && current[i].mode === "indicativo") {
+            if (i < 6 && current[i].mode === firstMode) {
                 first.push(current[i])
-            } else if (i >= 6 && i < 12 && current[i].mode === "indicativo") {
+            } else if (i >= 6 && i < 12 && current[i].mode === firstMode) {
                 second.push(current[i])
             } else {
                 third.push(current[i])
             }
         }
     }
+
+    const select = (selectedLanguage, selectedVerb) => {
+        setLanguage(selectedLanguage)
+        setNameVerb(selectedVerb)
+    }
     
     
-    return <AuthContext.Provider value={{ handleGetVerb, verb, first, second, third, languages }}>
+    return <AuthContext.Provider value={{ handleGetVerb, select, verb, first, second, third, languages, firstMode, secondMode }}>
         {children}
     </AuthContext.Provider>
 };
