@@ -19,12 +19,16 @@ const Header = () => {
         navigate('/new')
     }
 
+    const handleAccessLanguagesPage = () => {
+        navigate('/languages')
+    }
+
     return (
         <Main>
             <Title>Conjugador de Verbos React</Title>
             <Menu>
                 <MenuList onClick={handleAccessCreateVerbPage}>Cadastrar</MenuList>
-                <MenuList>Idiomas</MenuList>
+                <MenuList onClick={handleAccessLanguagesPage}>Idiomas</MenuList>
                 <MenuList onClick={handleAccessVerbsPage}>Verbos</MenuList>
                 <MenuList onClick={handleAccessConsultPage}>Consultar</MenuList>
             </Menu>

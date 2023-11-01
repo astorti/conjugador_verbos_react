@@ -14,6 +14,7 @@ export const AuthContextProvider = ({children}) => {
     let language = "Espanhol"
     let nameVerb = "ser"
     let firstMode = 'indicativo'
+    let languages = []
 
     useEffect(() => {
         handleGetVerb();
@@ -25,6 +26,18 @@ export const AuthContextProvider = ({children}) => {
             setVerb(data)
         } catch (e) {
             console.log("Erro")
+        }
+        getLanguages()
+    }
+
+    const getLanguages = () => {
+        languages.push(verb[0].name)
+        for (let item in verb) {
+            for (let l in languages) {
+                if (verb[item].name !== languages[l]) {
+                    languages.push(verb[item].name)
+                }
+            }
         }
     }
 
@@ -50,7 +63,7 @@ export const AuthContextProvider = ({children}) => {
     }
     
     
-    return <AuthContext.Provider value={{ handleGetVerb, verb, first, second, third }}>
+    return <AuthContext.Provider value={{ handleGetVerb, verb, first, second, third, languages }}>
         {children}
     </AuthContext.Provider>
 };
