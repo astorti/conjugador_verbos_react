@@ -5,17 +5,22 @@ import {useAuth} from '../../hooks/useAuth'
 const VerbListComponent = () => {
 
     const { verb } = useAuth()
-    let counter = 1
+    let reverseListVerb = []
+    let counter = verb.length
+
+    for (let i = verb.length - 1; i >= 0; i--){
+        reverseListVerb.push(verb[i])
+    }
 
     return (
         <div>
             
-            {verb.map((list) => {
+            {reverseListVerb.map((list) => {
                 return (
                     
                     <Container>
                         <Id>
-                            <Text>{counter++}</Text>
+                            <Text>{counter--}</Text>
                         </Id>
                         <Language>
                             <Text>{list.name}</Text>

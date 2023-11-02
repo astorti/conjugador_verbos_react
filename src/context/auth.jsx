@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { api } from "../services/api";
+import { v1 as uuidv1 } from 'uuid';
+
 
 export const AuthContext = createContext();
 
@@ -23,18 +25,36 @@ export const AuthContextProvider = ({children}) => {
         handleGetVerb();
     }, [verb])
 
+
+    const handleSubmit = (newLanguage, newVerbName, newMode, newTense, newFirst, newSecond, newThird, newFourth, newFifth, newSixth) => {
+        api.post(`/languages`, {
+            id: uuidv1(),
+            name: newLanguage,
+            verbName: newVerbName,
+            mode: newMode,
+            tense: newTense,
+            first: newFirst,
+            second: newSecond,
+            third: newThird,
+            fourth: newFourth,
+            fifth: newFifth,
+            sixth: newSixth
+        }) 
+        alert("Cadastro realizado com sucesso")
+    }
+
+
     const handleGetVerb = async () => {
         try {
             const { data } = await api.get(`/languages`);
             setVerb(data)
+            getLanguages();
         } catch (e) {
             console.log("Erro")
         }
-        getLanguages()
     }
 
     const getLanguages = () => {
-        languages.push(verb[0].name)
         for (let item in verb) {
             if (!languages.includes(verb[item].name)) {
                 languages.push(verb[item].name)
@@ -83,7 +103,7 @@ export const AuthContextProvider = ({children}) => {
     }
     
     
-    return <AuthContext.Provider value={{ handleGetVerb, select, verb, first, second, third, languages, firstMode, secondMode }}>
+    return <AuthContext.Provider value={{ handleGetVerb, handleSubmit, select, verb, first, second, third, languages, firstMode, secondMode }}>
         {children}
     </AuthContext.Provider>
 };
