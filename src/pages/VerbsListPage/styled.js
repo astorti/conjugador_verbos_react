@@ -8,6 +8,16 @@ export const Container = styled.div`
     background-color: transparent;
     padding: 10px;
 `
+
+export const ButtonId = styled.button`
+    background-color: #e2f2e8;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1px 5px;
+    cursor: pointer;
+    color: #49796b;
+`
+
 export const Title = styled.h3`
     background-color: transparent;
     margin: 17px auto;

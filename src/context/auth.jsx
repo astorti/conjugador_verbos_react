@@ -20,6 +20,7 @@ export const AuthContextProvider = ({children}) => {
     let languages = []
     let firstCount = 0
     let secondCount = 0
+    const [orderNumber, setOrderNumber] = useState('')
 
     useEffect(() => {
         handleGetVerb();
@@ -100,6 +101,10 @@ export const AuthContextProvider = ({children}) => {
         }
     }
 
+    const getListOrderNumber = (number) => {
+        setOrderNumber(number)
+    }
+
     for (let item in verb) {
         if (verb[item].name === language && verb[item].verbName === nameVerb) {
             current.push(verb[item])
@@ -141,7 +146,10 @@ export const AuthContextProvider = ({children}) => {
     }
     
     
-    return <AuthContext.Provider value={{ handleGetVerb, handleSubmit, handleGetVerbToBeUpdated, handleUpdateVerb, select, handleDeleteVerb, deleteSelectedLanguage, verbToBeUpdated, verb, first, second, third, languages, firstMode, secondMode }}>
+    return <AuthContext.Provider value={{
+        handleGetVerb, handleSubmit, handleGetVerbToBeUpdated, handleUpdateVerb, select, handleDeleteVerb, deleteSelectedLanguage, getListOrderNumber,
+        verbToBeUpdated, verb, first, second, third, languages, firstMode, secondMode, orderNumber
+    }}>
         {children}
     </AuthContext.Provider>
 };

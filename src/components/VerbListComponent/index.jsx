@@ -5,14 +5,23 @@ import { useNavigate } from "react-router-dom";
 
 const VerbListComponent = () => {
 
-    const { verb, handleGetVerbToBeUpdated, handleDeleteVerb } = useAuth()
+    const { verb, handleGetVerbToBeUpdated, handleDeleteVerb, orderNumber } = useAuth()
     const navigate = useNavigate()
 
     let reverseListVerb = []
-    let counter = verb.length
-
+    let listOrder = []
+    let counter = ''
+    
     for (let i = verb.length - 1; i >= 0; i--){
         reverseListVerb.push(verb[i])
+    }
+    
+    if (orderNumber === 0) {
+        listOrder = reverseListVerb
+        counter = verb.length
+    } else {
+        listOrder = verb
+        counter = 1
     }
 
     const handleEdit = (list) => {
@@ -29,12 +38,12 @@ const VerbListComponent = () => {
     return (
         <div>
             
-            {reverseListVerb.map((list) => {
+            {listOrder.map((list) => {
                 return (
                     
                     <Container key={list.id}>
                         <Id>
-                            <Text>{counter--}</Text>
+                            <Text>{orderNumber === 0 ? counter-- : counter++}</Text>
                         </Id>
                         <Language>
                             <Text>{list.name}</Text>
