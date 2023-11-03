@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Form, Input, Line, SaveButton, Span, Title, UpdateButton } from "./styled";
+import { CancelButton, Container, Form, Input, Line, SaveButton, Span, Title, UpdateButton } from "./styled";
 import { useAuth } from '../../hooks/useAuth'
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const NewVerb = () => {
 
     const navigate = useNavigate()
 
-    const { handleSubmit, verbToBeUpdated, handleUpdateVerb } = useAuth()
+    const { handleSubmit, verbToBeUpdated, handleUpdateVerb, handleGetVerbToBeUpdated } = useAuth()
 
     const [language, setLanguage] = useState("")
     const [verbName, setVerbName] = useState("")
@@ -57,6 +57,34 @@ const NewVerb = () => {
     const saveUpdate = () => {
         handleUpdateVerb(verbToBeUpdated.id, language, verbName, mode, tense, firstConjugation, secondConjugation, thirdConjugation, fourthConjugation, fifthConjugation, sixthConjugation)
         navigate('/verbs')
+    }
+
+    const clearForm = () => {
+        let clearDatas = {
+            id: '',
+            name: '',
+            verbName: '',
+            mode: '',
+            tense: '',
+            first: '',
+            second: '',
+            third: '',
+            fourth: '',
+            fifth: '',
+            sixth: ''
+        }
+        setLanguage("")
+        setVerbName("")
+        setMode("")
+        setTense("")
+        setFirstConjugation("")
+        setSecondConjugation("")
+        setThirdConjugation("")
+        setFourthConjugation("")
+        setFifthConjugation("")
+        setSixthConjugation("")
+        
+        handleGetVerbToBeUpdated(clearDatas)
     }
 
 
@@ -108,6 +136,7 @@ const NewVerb = () => {
                     <Line>
                         <SaveButton type="submit">Salvar</SaveButton>
                         <UpdateButton onClick={() => saveUpdate()}>Atualizar</UpdateButton>
+                        <CancelButton onClick={() => clearForm()}>Cancelar</CancelButton>
                     </Line>
                 </Form>
                 </Container>

@@ -23,7 +23,7 @@ const VerbsListPage = () => {
             <Container>
                 <Title>VERBOS CADASTRADOS</Title>
                 <Header>
-                    <ButtonId type="submit" onClick={() => changeListOrder()}>#</ButtonId>
+                    <ButtonId type="submit" onClick={() => changeListOrder()}>{listOrder === 0 ? "# ↓" : "↑ #"}</ButtonId>
                     <ItemMenu>Idioma</ItemMenu>
                     <ItemMenu>Verbo</ItemMenu>
                     <ItemMenu>Modo</ItemMenu>

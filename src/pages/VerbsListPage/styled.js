@@ -15,7 +15,8 @@ export const ButtonId = styled.button`
     border-radius: 5px;
     padding: 1px 5px;
     cursor: pointer;
-    color: #49796b;
+    color: #000000;
+    font-weight: bolder;
 `
 
 export const Title = styled.h3`

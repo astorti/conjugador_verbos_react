@@ -4,6 +4,7 @@ import { VerbsListPage } from "./pages/VerbsListPage";
 import { AuthContextProvider } from "./context/auth";
 import { NewVerb } from "./pages/NewVerb";
 import { LanguageListPage } from "./pages/LanguageListPage";
+import { WelcomePage } from "./pages/WelcomePage";
 import Header from "./components/Header";
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
       <AuthContextProvider>
         <Header/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/verbs" element={<VerbsListPage />} />
           <Route path="/new" element={<NewVerb />} />
           <Route path="/languages" element={<LanguageListPage />} />

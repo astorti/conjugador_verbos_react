@@ -7,7 +7,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px auto 0;
+    margin: 30px auto 20px;
 `
 
 export const Title = styled.h3`
@@ -57,6 +57,14 @@ export const SaveButton = styled.button`
 
 export const UpdateButton = styled.button`
     background-color: #FFFF99;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 3px;
+`
+
+export const CancelButton = styled.button`
+    background-color: #93bad0;
     border: 1px solid #000000;
     border-radius: 3px;
     cursor: pointer;

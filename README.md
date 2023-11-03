@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# PROJETO CONJUGADOR DE VERBOS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto pessoal de um conjugador de verbos para estudo de verbos. No programa é possível adicionar verbos informando o idioma, nome do verbo, modo e tempo verbal, assim como sua respectiva conjugação **(figura4)**.
 
-## Available Scripts
+Com os verbos cadastrados é possível realizar a busca de todos os tempos verbais de um específico verbo **(figura1)**. Também é possível consultar uma listagem com todos os verbos cadastrados **(figura2)**, assim como de todos os idiomas cadastrados **(figura3)**.
 
-In the project directory, you can run:
+Na página de listagem dos verbos, é possível alterar a ordem dos verbos cadastros ao clicar no botão do índice numérico da listagem
 
-### `npm start`
+Ao clicar no botão de excluir na página da listagem de idiomas, será realizada a exclusão de todos os verbos cadastrados do idioma selecionado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Como banco de dados para inserção dos verbos, foi implementada uma api local com arquivo no formato json
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Para rodar o programa
 
-### `npm test`
+### No terminal digitar os comandos
+> Para iniciar a api: **npm run api**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Para iniciar o projeto: **npm start**
 
-### `npm run build`
+## Tecnologias utilizada para criação do projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+>|   |    |   |
+>| ------ | ------ | ------ |
+>| **React** | **React-router-dom** | **Javascript** |
+>| **Axios** | **Styled-Component** | **Uuid** |
+>|   |    |   |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Telas do projeto
 
-### `npm run eject`
+![searchPage](src\assets\searchPage.png)
+Figura1: Página de busca
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![verbsPage](src\assets\verbsPage.png)
+Figura2: Listagem de verbos
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![languagesPage](src\assets\languagesPage.png)
+Figura3: Página de idiomas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![newVerb_update_Page](src\assets\newVerb_update_Page.png)
+Figura4: Página de adição e atualização
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+>*Projeto desenvolvido em novembro/2023*

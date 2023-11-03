@@ -22,9 +22,13 @@ export const Menu = styled.div`
     padding: 10px;
 `
 
-export const Title = styled.h2`
+export const Title = styled.button`
+    border: none;
     background-color: #49796b;
     color: #a0d6b4;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
 `
 
 export const MenuList = styled.button`

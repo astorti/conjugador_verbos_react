@@ -2,7 +2,7 @@
   "languages": [
     {
       "id": 1,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "presente",
@@ -15,7 +15,7 @@
     },
     {
       "id": 2,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "preterito perfecto",
@@ -28,7 +28,7 @@
     },
     {
       "id": 3,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "imperfecto",
@@ -41,7 +41,7 @@
     },
     {
       "id": 4,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "pluscuamperfecto",
@@ -54,7 +54,7 @@
     },
     {
       "id": 5,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "indefinido",
@@ -67,7 +67,7 @@
     },
     {
       "id": 6,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "preterito anterior",
@@ -80,7 +80,7 @@
     },
     {
       "id": 7,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "futuro imperfecto",
@@ -93,7 +93,7 @@
     },
     {
       "id": 8,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "futuro perfecto",
@@ -106,7 +106,7 @@
     },
     {
       "id": 9,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "condicional",
@@ -119,7 +119,7 @@
     },
     {
       "id": 10,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "indicativo",
       "tense": "condicional compuesto",
@@ -132,7 +132,7 @@
     },
     {
       "id": 11,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "subjuntivo",
       "tense": "presente",
@@ -145,7 +145,7 @@
     },
     {
       "id": 12,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "estar",
       "mode": "subjuntivo",
       "tense": "perfecto",
@@ -158,7 +158,7 @@
     },
     {
       "id": 13,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "subjuntivo",
       "tense": "imperfecto",
@@ -171,7 +171,7 @@
     },
     {
       "id": 14,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "subjuntivo",
       "tense": "imperfecto",
@@ -184,7 +184,7 @@
     },
     {
       "id": 15,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "subjuntivo",
       "tense": "perfecto",
@@ -197,7 +197,7 @@
     },
     {
       "id": 16,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "subjuntivo",
       "tense": "pluscuamperfecto",
@@ -210,7 +210,7 @@
     },
     {
       "id": 17,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "ser",
       "mode": "subjuntivo",
       "tense": "pluscuamperfecto",
@@ -236,7 +236,7 @@
     },
     {
       "id": 19,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "estar",
       "mode": "indicativo",
       "tense": "presente",
@@ -249,7 +249,7 @@
     },
     {
       "id": 20,
-      "name": "Espanhol",
+      "name": "espanhol",
       "verbName": "estar",
       "mode": "indicativo",
       "tense": "preterito perfecto",
