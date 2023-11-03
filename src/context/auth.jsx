@@ -25,6 +25,29 @@ export const AuthContextProvider = ({children}) => {
         handleGetVerb();
     }, [verb])
 
+    const [ verbToBeUpdated, setVerbToBeUpdated] = useState('')
+    const handleGetVerbToBeUpdated = (updateVerb) => {
+        setVerbToBeUpdated(updateVerb)
+    }
+
+    const handleUpdateVerb = (id, updateName, updateVerbName, updateMode, updateTense, updateFirst, updateSecond, updateThird, updateFourth, updateFifth, updateSixth) => {
+        api.put(`/languages/${id}`, {
+            id: id,
+            name: updateName,
+            verbName: updateVerbName,
+            mode: updateMode,
+            tense: updateTense,
+            first: updateFirst,
+            second: updateSecond,
+            third: updateThird,
+            fourth: updateFourth,
+            fifth: updateFifth,
+            sixth: updateSixth
+        })
+        alert("Verbo atualizado com sucesso")
+        setVerbToBeUpdated('')
+    }
+    
 
     const handleSubmit = (newLanguage, newVerbName, newMode, newTense, newFirst, newSecond, newThird, newFourth, newFifth, newSixth) => {
         api.post(`/languages`, {
@@ -103,7 +126,7 @@ export const AuthContextProvider = ({children}) => {
     }
     
     
-    return <AuthContext.Provider value={{ handleGetVerb, handleSubmit, select, verb, first, second, third, languages, firstMode, secondMode }}>
+    return <AuthContext.Provider value={{ handleGetVerb, handleSubmit, handleGetVerbToBeUpdated, handleUpdateVerb, select, verbToBeUpdated, verb, first, second, third, languages, firstMode, secondMode }}>
         {children}
     </AuthContext.Provider>
 };

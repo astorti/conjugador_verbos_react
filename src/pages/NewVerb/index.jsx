@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Form, Input, Line, SaveButton, Span, Title, UpdateButton } from "./styled";
 import { useAuth } from '../../hooks/useAuth'
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ const NewVerb = () => {
 
     const navigate = useNavigate()
 
-    const { handleSubmit } = useAuth()
+    const { handleSubmit, verbToBeUpdated, handleUpdateVerb } = useAuth()
 
     const [language, setLanguage] = useState("")
     const [verbName, setVerbName] = useState("")
@@ -36,6 +36,29 @@ const NewVerb = () => {
 
         navigate("/verbs")
     }
+
+    useEffect(() => {
+        handleReceiveValuesToUpdate()
+    }, [])
+
+    const handleReceiveValuesToUpdate = () => {
+        setLanguage(verbToBeUpdated.name)
+        setVerbName(verbToBeUpdated.verbName)
+        setMode(verbToBeUpdated.mode)
+        setTense(verbToBeUpdated.tense)
+        setFirstConjugation(verbToBeUpdated.first)
+        setSecondConjugation(verbToBeUpdated.second)
+        setThirdConjugation(verbToBeUpdated.third)
+        setFourthConjugation(verbToBeUpdated.fourth)
+        setFifthConjugation(verbToBeUpdated.fifth)
+        setSixthConjugation(verbToBeUpdated.sixth)
+    }
+
+    const saveUpdate = () => {
+        handleUpdateVerb(verbToBeUpdated.id, language, verbName, mode, tense, firstConjugation, secondConjugation, thirdConjugation, fourthConjugation, fifthConjugation, sixthConjugation)
+        navigate('/verbs')
+    }
+
 
     return (
         <>
@@ -84,7 +107,7 @@ const NewVerb = () => {
                     </Line>
                     <Line>
                         <SaveButton type="submit">Salvar</SaveButton>
-                        <UpdateButton>Atualizar</UpdateButton>
+                        <UpdateButton onClick={() => saveUpdate()}>Atualizar</UpdateButton>
                     </Line>
                 </Form>
                 </Container>
