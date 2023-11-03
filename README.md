@@ -28,16 +28,16 @@ Como banco de dados para inserção dos verbos, foi implementada uma api local c
 
 ## Telas do projeto
 
-![searchPage](src\assets\searchPage.png)
+![searchPage](src/assets/searchPage.png)
 Figura1: Página de busca
 
-![verbsPage](src\assets\verbsPage.png)
+![verbsPage](src/assets/verbsPage.png)
 Figura2: Listagem de verbos
 
-![languagesPage](src\assets\languagesPage.png)
+![languagesPage](src/assets/languagesPage.png)
 Figura3: Página de idiomas
 
-![newVerb_update_Page](src\assets\newVerb_update_Page.png)
+![newVerb_update_Page](src/assets/newVerb_update_Page.png)
 Figura4: Página de adição e atualização
 
 >*Projeto desenvolvido em novembro/2023*
