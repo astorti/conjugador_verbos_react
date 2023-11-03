@@ -272,32 +272,6 @@
       "fourth": "amiamo",
       "fifth": "amate",
       "sixth": "amano"
-    },
-    {
-      "id": "dc837930-7937-11ee-82dc-45a3ba66063a",
-      "name": "italiano",
-      "verbName": "amare",
-      "mode": "congiuntivo",
-      "tense": "presente",
-      "first": "ami",
-      "second": "ami",
-      "third": "ami",
-      "fourth": "amiamo",
-      "fifth": "amiate",
-      "sixth": "amino"
-    },
-    {
-      "id": "9045bbd0-7939-11ee-82dc-45a3ba66063a",
-      "name": "italiano",
-      "verbName": "amare",
-      "mode": "indicativo",
-      "tense": "imperfecto",
-      "first": "ero",
-      "second": "eri",
-      "third": "era",
-      "fourth": "eravamo",
-      "fifth": "eravate",
-      "sixth": "erano"
     }
   ]
 }

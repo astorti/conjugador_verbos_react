@@ -30,6 +30,21 @@ export const AuthContextProvider = ({children}) => {
         setVerbToBeUpdated(updateVerb)
     }
 
+    const handleDeleteVerb = (id) => {
+        api.delete(`/languages/${id}`)
+        handleGetVerb()
+    }
+
+    const deleteSelectedLanguage = (languageToBeDeleted) => {
+        for (let item in verb) {
+            if (languageToBeDeleted === verb[item].name) {
+                api.delete(`/languages/${verb[item].id}`)
+            }
+        }
+        alert(`Todos os verbos do idioma ${languageToBeDeleted} foram excluidos com sucesso.`)
+        handleGetVerb()
+    }
+
     const handleUpdateVerb = (id, updateName, updateVerbName, updateMode, updateTense, updateFirst, updateSecond, updateThird, updateFourth, updateFifth, updateSixth) => {
         api.put(`/languages/${id}`, {
             id: id,
@@ -126,7 +141,7 @@ export const AuthContextProvider = ({children}) => {
     }
     
     
-    return <AuthContext.Provider value={{ handleGetVerb, handleSubmit, handleGetVerbToBeUpdated, handleUpdateVerb, select, verbToBeUpdated, verb, first, second, third, languages, firstMode, secondMode }}>
+    return <AuthContext.Provider value={{ handleGetVerb, handleSubmit, handleGetVerbToBeUpdated, handleUpdateVerb, select, handleDeleteVerb, deleteSelectedLanguage, verbToBeUpdated, verb, first, second, third, languages, firstMode, secondMode }}>
         {children}
     </AuthContext.Provider>
 };

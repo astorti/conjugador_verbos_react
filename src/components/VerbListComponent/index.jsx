@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const VerbListComponent = () => {
 
-    const { verb, handleGetVerbToBeUpdated } = useAuth()
+    const { verb, handleGetVerbToBeUpdated, handleDeleteVerb } = useAuth()
     const navigate = useNavigate()
 
     let reverseListVerb = []
@@ -18,6 +18,12 @@ const VerbListComponent = () => {
     const handleEdit = (list) => {
         handleGetVerbToBeUpdated(list)
         navigate('/new')
+    }
+
+    const handleDelete = (id) => {
+        if (window.confirm("Confirmar a exclusão deste verbo? A exclusão não poderá ser desfeita.")) {
+            handleDeleteVerb(id)
+        }
     }
 
     return (
@@ -44,7 +50,7 @@ const VerbListComponent = () => {
                         </Tense>
                         <Actions>
                             <UpdateButton onClick={() => handleEdit(list)}>Editar</UpdateButton>
-                            <DeleteButton>Excluir</DeleteButton>
+                            <DeleteButton onClick={() => handleDelete(list.id)}>Excluir</DeleteButton>
                         </Actions>
                     </Container>
                 
